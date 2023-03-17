@@ -4,15 +4,9 @@ export default function TextForm(props) {
 
   const [text, setText] = useState('Enter text here');
  const handleOnChange = (event)=>{
-    // console.log(event.target.value.length);
-    // console.log(text)
-     
-      setText(event.target.value);
-      
- 
-  }
+     setText(event.target.value);
+   }
  const toUpperCase = (event)=>{
-  // newText(event.target.value);
   let newText = text.toUpperCase();
   setText(newText);
 
