@@ -9,29 +9,51 @@ export default function TextForm(props) {
  const toUpperCase = (event)=>{
   let newText = text.toUpperCase();
   setText(newText);
+  props.showAlert('Converted to uppercase!',"success");
 
   }
   
   const toLowerCase =()=>{
 let loCase = text.toLowerCase();
 setText(loCase);
+props.showAlert('Converted to lowercase!',"success");
   }
 
   const copyText = ()=>{
   let text = document.getElementById('mytext');
      text.select();
      navigator.clipboard.writeText(text.value);
+     if(text.value.length > 1 ){
+      console.log(text.value.length);
+      props.showAlert('Text copied!',"success");
+    } else {
+      props.showAlert('Please enter text to copy!',"warning");
+    }
+    
   }
 
   const removeExtraSpaces = () =>{
     let newText = text.split(/[ ]+/);
-    setText(newText.join(' '))
+    setText(newText.join(' '));
+    if(newText.length > 1){
+      console.log(newText);
+      props.showAlert('Extra spaces has been removed!',"success");
+    } else {
+      props.showAlert('No text found!',"warning");
+    }
+    
 
   }
   
   const clearText = ()=>{
     // let clearText = 
     setText("");
+    if(text.length > 1){
+      props.showAlert('Text has been cleared',"success");
+    } else {
+      props.showAlert('No text found!',"warning");
+    }
+    
   }
   return (
     <>
