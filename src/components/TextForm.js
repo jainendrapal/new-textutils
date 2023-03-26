@@ -3,8 +3,8 @@ import React, {useState} from "react";
 export default function TextForm(props) {
 
   const [text, setText] = useState('Enter text here');
- const handleOnChange = (event)=>{
-     setText(event.target.value);
+  const handleOnChange = (event)=>{
+       setText(event.target.value);
    }
  const toUpperCase = (event)=>{
   let newText = text.toUpperCase();
@@ -78,7 +78,7 @@ props.showAlert('Converted to lowercase!',"success");
     </div>
     <div className="container my-2" style={{color: props.mode === 'dark' ? 'white': 'black'}}>
       <h1>Your text summary</h1>
-      <p>{text.split(" ").length !== 0 ?  text.split(" ").length : 0 } words and {text.length} charecters</p>
+      <p>{text.trim(" ").length } words and {text.length} charecters</p>
       <p></p>
       <p>{0.008*text.split(" ").length} minutes to read</p>
       <h3>Preview</h3>

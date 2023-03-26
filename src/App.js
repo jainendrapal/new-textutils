@@ -36,7 +36,7 @@ const showAlert = (message,type) =>{
   return (
 
     <>
-    <Header title="Text Utils" about="All About" mode={mode} toggleMode={toggleMode}/>
+    <Header title="TextUtils" about="All About" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className='container my-3'>
     <TextForm heading="Enter your text to analyze"  mode={mode}  showAlert={showAlert}/>
