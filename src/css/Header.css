@@ -1,0 +1,11 @@
+.headerText{
+    color: blueviolet !important;
+    
+}
+a:hover {
+    color: blueviolet !important;
+    text-decoration: underline;
+}
+.headerTag{
+    background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')
+}
