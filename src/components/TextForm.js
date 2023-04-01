@@ -59,39 +59,7 @@ props.showAlert('Converted to lowercase!',"success");
   return (
     <>
     <div className="container">
-
-    {/* <!-- Content section--> */}
-        <section className="py-5">
-            <div className="container my-5">
-                <div className="row justify-content-center">
-                    <div className="col-lg-6">
-                        <h2>Full Width Backgrounds</h2>
-                        <p className="lead">A single, lightweight helper class allows you to add engaging, full width background images to sections of your page.</p>
-                        <p className="mb-0">The universe is almost 14 billion years old, and, wow! Life had no problem starting here on Earth! I think it would be inexcusably egocentric of us to suggest that we're alone in the universe.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/* <!-- Image element - set the background image for the header in the line below--> */}
-        <div className="py-5 bg-image-full bkImage">
-            {/* <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!--> */}
-            <div className="gap-div"></div>
-        </div>
-        {/* <!-- Content section--> */}
-        <section className="py-5">
-            <div className="container my-5">
-                <div className="row justify-content-center">
-                    <div className="col-lg-6">
-                        <h2>Engaging Background Images</h2>
-                        <p className="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>
-                        <p className="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <h1 style={{color: props.mode === 'dark' ? 'white': 'black'}}>{props.heading}</h1>
+     <h1 style={{color: props.mode === 'dark' ? 'white': 'black'}}>{props.heading}</h1>
        <div className="mb-3">
       <textarea
           className="form-control"
@@ -102,16 +70,17 @@ props.showAlert('Converted to lowercase!',"success");
           style={{backgroundColor:props.mode === 'dark' ? '#6c757d': 'white', color: props.mode === 'dark' ? 'white': 'black'}}
         ></textarea>
       </div>
-      <button className="btn  btn-primary mx-2" onClick={toUpperCase}>Convert to upper case</button>
-      <button className="btn  btn-primary mx-2" onClick={toLowerCase}>Convert to lower case</button>
-      <button className="btn  btn-primary mx-2" onClick={clearText}>Clear text</button>
-      <button className="btn  btn-primary mx-2" onClick={copyText}>Copy text</button>
-      <button className="btn  btn-primary mx-2" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
+      <button className="btn  btn-primary mx-1 my-1" onClick={toUpperCase}>Convert to upper case</button>
+      <button className="btn  btn-primary mx-1 my-1" onClick={toLowerCase}>Convert to lower case</button>
+      <button className="btn  btn-primary mx-1 my-1" onClick={clearText}>Clear text</button>
+      <button className="btn  btn-primary mx-1 my-1" onClick={copyText}>Copy text</button>
+      <button className="btn  btn-primary mx-1 my-1" onClick={removeExtraSpaces}>Remove Extra Spaces</button>
 
     </div>
     <div className="container my-2" style={{color: props.mode === 'dark' ? 'white': 'black'}}>
       <h1>Your text summary</h1>
-      <p>{text.trim(" ").length } words and {text.length} charecters</p>
+      {/* <p>{text.trim(" ").length } words and {text.length} charecters</p> */}
+      <p>{text.split(" ").filter((element)=>{return element.length !==0}).length } words and {text.length} charecters</p>
       <p></p>
       <p>{0.008*text.split(" ").length} minutes to read</p>
       <h3>Preview</h3>

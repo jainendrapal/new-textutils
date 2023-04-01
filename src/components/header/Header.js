@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../../css/Header.css";
+import { Link } from "react-router-dom";
 
 export default function Header(props) {
   return (
@@ -24,13 +25,14 @@ export default function Header(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
+              
               </li>
-              {/* <li className="nav-item">
-          <a className="nav-link" href="/">Link</a>
-        </li> */}
+              <li className="nav-item">
+          <Link className="nav-link" to="/about">About</Link>
+        </li>
             </ul>
             <div
               className={`form-check form-switch text-${
@@ -54,13 +56,6 @@ export default function Header(props) {
           </div>
         </div>
       </nav>
-      <header className="py-5 bg-image-full headerTag" >
-            <div className="text-center my-5">
-                <img className="img-fluid rounded-circle mb-4" src="https://dummyimage.com/150x150/6c757d/dee2e6.jpg" alt="..." />
-                <h1 className="text-white fs-3 fw-bolder">Full Width Pics</h1>
-                <p className="text-white-50 mb-0">Landing Page Template</p>
-            </div>
-        </header>
     </div>
   );
 }
