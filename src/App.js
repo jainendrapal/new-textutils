@@ -40,8 +40,10 @@ const showAlert = (message,type) =>{
     <Header title="TextUtils" about="All About" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className='container my-3'>
+      
       <Routes>
-        <Route path='/' element={<TextForm heading="Enter your text to analyze"  mode={mode}  showAlert={showAlert}/>}/>
+      <Route path='/' element={<TextForm heading="Enter your text to analyze"  mode={mode}  showAlert={showAlert}/>}/>
+        <Route path='/home' element={<TextForm heading="Enter your text to analyze"  mode={mode}  showAlert={showAlert}/>}/>
         
         <Route exact path='/about' element={   <About/>}/>
       
